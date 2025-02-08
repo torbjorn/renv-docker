@@ -1,0 +1,22 @@
+name: Docker Build and Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  docker-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build docker image
+        working-directory: 01-cache-in-project
+        run: make build
+
+      - name: Test the docker container
+        working-directory: 01-cache-in-project
+        run: make test
