@@ -18,7 +18,7 @@ build:
 build-prod:
 	docker build $(ARGS) -t $(IMAGE_NAME) --target prod .
 
-test:
+test: build
 	$(DOCKER_RUN) R -e 'source("deps.R")'
 
 shell: build
