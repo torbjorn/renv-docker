@@ -24,7 +24,3 @@ RUN <<EOR
 R --vanilla -e "dir.create(renv::paths\$library(), recursive=TRUE)
 file.copy(find.package('renv'), renv::paths\$library(), recursive = TRUE)"
 EOR
-
-FROM base-image AS dev
-
-FROM base-image AS prod

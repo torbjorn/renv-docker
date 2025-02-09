@@ -13,10 +13,7 @@ DOCKER_RUN = docker run --rm -i $(USE_TTY) \
 .PHONY: build build-prod shell
 
 build:
-	docker build $(ARGS) -t $(IMAGE_NAME) --target dev .
-
-build-prod:
-	docker build $(ARGS) -t $(IMAGE_NAME) --target prod .
+	docker build $(ARGS) -t $(IMAGE_NAME) .
 
 test: build
 	$(DOCKER_RUN) R -e 'source("deps.R")'

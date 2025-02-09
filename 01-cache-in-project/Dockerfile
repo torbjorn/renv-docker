@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.4.2 AS base-image
+FROM rocker/r-ver:4.4.2
 
 RUN mkdir /project
 WORKDIR /project
@@ -25,13 +25,6 @@ RUN <<EOR
 R --vanilla -e "dir.create(renv::paths\$library(), recursive=TRUE)
 file.copy(find.package('renv'), renv::paths\$library(), recursive = TRUE)"
 EOR
-
-FROM base-image AS dev
-
-# Restore the project library
-RUN R -e "renv::restore()"
-
-FROM base-image AS prod
 
 # Restore the project library
 RUN R -e "renv::restore()"
