@@ -9,6 +9,28 @@ docker.
 | [02-cache-in-project-restore-after](02-cache-in-project-restore-after) | Mounts the cache and restores when container is run                            |
 | [03-global-cache-restore-after](03-global-cache-restore-after)         | Keeps cache outside the project, restores when container is run, as in case 02 |
 
+> [!TIP]
+> To try them out, clone this repo and do:
+> * cd 01-cache-in-project
+> * make shell
+> * R
+> * library(tidyverse)
+
+All cases should behave the same, you can run make shell in either. In all of them it should say:
+
+    - Project '/project' loaded. [renv 1.1.1]
+    > library(tidyverse)
+    ── Attaching core tidyverse packages ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 2.0.0 ──
+    ✔ dplyr     1.1.4     ✔ readr     2.1.5
+    ✔ forcats   1.0.0     ✔ stringr   1.5.1
+    ✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+    ✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+    ✔ purrr     1.0.4
+    ── Conflicts ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+    ✖ dplyr::filter() masks stats::filter()
+    ✖ dplyr::lag()    masks stats::lag()
+    ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+
 # Case 01: Cache in project
 
 This setup keeps the renv cache in the project (in this example in a
