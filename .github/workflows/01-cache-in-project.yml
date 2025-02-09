@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build docker image
-        working-directory: 02-cache-in-project-restore-after
+        working-directory: 01-cache-in-project
         run: make build
 
       - name: Test the docker container
-        working-directory: 02-cache-in-project-restore-after
+        working-directory: 01-cache-in-project
         run: make test
