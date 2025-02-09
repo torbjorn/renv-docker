@@ -16,7 +16,6 @@ EOR
 
 # Copy renv files and dirs
 COPY renv.lock /project/renv.lock
-COPY .renv_cache /renv_cache
 COPY .Rprofile /project/.Rprofile
 COPY renv /project/renv
 
