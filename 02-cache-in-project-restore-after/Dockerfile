@@ -5,7 +5,7 @@ WORKDIR /project
 
 ENV RENV_PATHS_ROOT=/renv_cache
 ENV RENV_PATHS_LIBRARY=/project-library
-ENV RENV_VERSION=1.1.0
+ENV RENV_VERSION=1.1.1
 ENV repo=https://packagemanager.posit.co/cran/__linux__/jammy/latest
 
 # Install renv
