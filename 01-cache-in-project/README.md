@@ -3,6 +3,7 @@
 * Cache is kept locally in project in `.renv_cache/` but ignored by git.
 * Cache is `COPY`'ed in during docker build.
 * `renv::restore()` is then run, with access to cache.
+* In use, the renv cache dir can be mounted to capture cache from future new packages installed
 
 > [!IMPORTANT]
 > During build, if you restore a package not in cache, the package
